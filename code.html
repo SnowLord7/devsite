@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Javascript Scripting | Code</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="code.js"></script>
+
+<link rel="stylesheet" href="codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="codemirror/addon/display/fullscreen.css">
+<link rel="stylesheet" href="codemirror/theme/night.css">
+<link rel="stylesheet" href="codemirror/theme/eclipse.css">
+<script src="codemirror/lib/codemirror.js"></script>
+<script src="codemirror/mode/javascript/javascript.js"></script>
+<script src="codemirror/mode/xml/xml.js"></script>
+<script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="codemirror/addon/display/fullscreen.js"></script>
+
+</head>
+<body>
+
+<div class="header">
+	<h1>Javascript Challenges</h1>
+	<h4>The best way to code for online game</h4>
+</div>
+
+<div class="navbar">
+	<a href="main.html" class="link-black">Home</a>
+	<a href="code.html" class="link-black">Code</a>
+	<a href="challenges.html" class="link-black">Challenges</a>
+	<a href="https://discord.gg/sVg85na" target="_blank" class="right link-black">Discord</a>
+</div>
+
+<div class="row">
+	<div class="main">
+		<h2 class="title">USEFULL SCRIPTS</h2>
+		<h5>Last Updated: 6/16/18</h5>
+		<p>
+			<strong>
+			Some of these codes will help you in the challenges! 
+			If you do not want any hints, leave this page right now!
+			</strong><br>
+			Here you can find some usefull codes that I have put from my scripts. 
+			For example, you might not know how to calculate the angle based off the X and Y coordinates,
+			so you can find a script here to do that.
+			If there any any scripts you have and you would like me to add them, please contact me.
+		</p>
+		<h2>Contents:</h2>
+		<ul>
+			<li><a onclick='document.getElementsByClassName("sTitle")[0].scrollIntoView()' class="link-white">Inject jQuery [JS]</a></li>
+			<li><a onclick='document.getElementsByClassName("sTitle")[1].scrollIntoView()' class="link-white">Sending POST requests with data [jQ]</a></li>
+			<li><a onclick='document.getElementsByClassName("sTitle")[2].scrollIntoView()' class="link-white">Sending GET requests [jQ]</a></li>
+			<li><a onclick='document.getElementsByClassName("sTitle")[3].scrollIntoView()' class="link-white">Get Angle Of Two Coordinates [JS]</a></li>
+			<li><a onclick='document.getElementsByClassName("sTitle")[4].scrollIntoView()' class="link-white">Get Distance Between Two Coordinates [JS]</a></li>
+		</ul> 
+		<h3 class="sTitle">Inject jQuery with Javascript</h3>
+		<textarea id="injectJQ" name="code">
+var jQ = document.createElement('script');
+jQ.type='text/javascript';
+document.body.appendChild(jQ);
+jQ.src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'; //Change SRC to jQuery version</textarea>
+
+		<h3 class="sTitle">Sending POST request with data in jQuery</h3>
+		<textarea id="postRequests" name="code">
+var message = {
+	title: "Hello!",
+	desc: "I learned how to send data!"
+};
+
+$.ajax({
+	type: 'POST',
+	url: 'https://messenger.com/api/channels/main/messages',
+	data: JSON.stringify(message),
+	headers: { 
+		'%3Aauthority': 'messenger.com', 
+		'%3Amethod': 'POST', 
+		'%3Apath': '/api/channels/main/messages', 
+		'%3Ascheme': 'https', 
+		'Authorization': 'password123!', 
+		'Content-Type': 'application/json' 
+	}
+});</textarea>
+		
+		<h3 class="sTitle">Sending GET request with jQuery</h3>
+		<textarea id="getRequests" name="code">
+$.get("https://pastebin.com/raw/tQLcKsds", function(data, status){
+	document.write("Message: " + data + "\nStatus: " + status);
+});</textarea>
+		
+		<h3 class="sTitle">Getting the Angle Between Two Coordinates with Javascript</h3>
+		<textarea id="angleFromCoords" name="code">
+function getAngle(x1, y1, x2, y2) {
+	return Math.atan2(y1 - y2, x1 - x2);
+}</textarea>
+
+		<h3 class="sTitle">Getting the Distance Between Two Coordinates with Javascript</h3>
+		<textarea id="distanceFromCoords" name="code">
+function getDistance(x1, y1, x2, y2) {
+	return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+}</textarea><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	</div>
+</div>
+
+</body>
+</html>
